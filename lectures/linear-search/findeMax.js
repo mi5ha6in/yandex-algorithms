@@ -9,8 +9,8 @@ function findeMax(sequence) {
     if (sequence[i] > answer) {
       answer = sequence[i];
     }
-    return answer;
   }
+  return answer;
 }
 
 console.log(findeMax(sequence));
