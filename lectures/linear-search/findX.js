@@ -2,7 +2,7 @@
 
 const arr = [1, 2, 54, 2, 7, 10, 3, 7, 8 ]
 
-function findeX (seq, x) {
+function findX (seq, x) {
   let answer = -1
 
   for (let i = 0; i < seq.length; i++) {
@@ -13,9 +13,9 @@ function findeX (seq, x) {
   return answer
 }
 
-const findeXVer2 = (seq, x) => seq.findIndex(item => item === x)
-const findeXVer3 = (seq, x) => seq.indexOf(x)
+const findXVer2 = (seq, x) => seq.findIndex(item => item === x)
+const findXVer3 = (seq, x) => seq.indexOf(x)
 
-console.log(findeX(arr, 7))
-console.log(findeXVer2(arr, 7))
-console.log(findeXVer3(arr, 7))
+console.log(findX(arr, 7))
+console.log(findXVer2(arr, 7))
+console.log(findXVer3(arr, 7))

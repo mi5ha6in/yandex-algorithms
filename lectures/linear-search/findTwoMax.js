@@ -1,6 +1,6 @@
 const sequence = [0, 5, 3, 2, 1];
 
-function findeTwoMax(sequence) {
+function findTwoMax(sequence) {
   let max1 = Math.max(sequence[0], sequence[1]);
   let max2 = Math.min(sequence[0], sequence[1]);
 
@@ -15,4 +15,4 @@ function findeTwoMax(sequence) {
   return [max1, max2];
 }
 
-console.log(findeTwoMax(sequence));
+console.log(findTwoMax(sequence));
