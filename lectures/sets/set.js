@@ -1,29 +1,38 @@
 const LENGTH_SET = 10;
-const set = new Array(10).fill([]);
+const set = Array.from(Array(LENGTH_SET), () => Array());
+
 const getHash = (value) => value % LENGTH_SET;
 
-const checkValueInSet = (value) => {
-  const hash = getHash(value);
-  return set[hash].includes(value)
-}
+const valueExistInSet = (value, hash) => {
+  return set[hash].includes(value);
+};
+
+const checkExistItemInSet = (item) => {
+  const hash = getHash(item);
+  return valueExistInSet(item, hash);
+};
 
 const addItemToSet = (item) => {
   const hash = getHash(item);
-  const isExists = set[hash].includes(item)
-  if (!isExists) {
-    set[hash].push(item)
+  if (!valueExistInSet(item, hash)) {
+    set[hash].push(item);
   }
-}
+};
 
-const dellItem = (item) => {
+const removeItemFromSet = (item) => {
   const hash = getHash(item);
-  const isExists = set[hash].includes(item)
-  if (isExists) {
-    if (set.length > 1) {
-      set[hash] = set[set.length]
-    } else {
-      set[hash] = []
-    }
-    
+  const listFromHash = set[hash];
+  const indexItem = listFromHash.findIndex((element) => element === item);
+
+  if (indexItem === -1) {
+    return;
   }
-}
+
+  if (listFromHash.length > 1) {
+    listFromHash[indexItem] = listFromHash[listFromHash.length - 1];
+    listFromHash.pop();
+    return;
+  }
+
+  listFromHash.length = 0;
+};
