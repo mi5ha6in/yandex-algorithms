@@ -28,11 +28,6 @@ const removeItemFromSet = (item) => {
     return;
   }
 
-  if (listFromHash.length > 1) {
-    listFromHash[indexItem] = listFromHash[listFromHash.length - 1];
-    listFromHash.pop();
-    return;
-  }
-
-  listFromHash.length = 0;
+  listFromHash[indexItem] = listFromHash[listFromHash.length - 1];
+  listFromHash.pop();
 };
